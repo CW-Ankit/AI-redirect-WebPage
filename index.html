@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Universe - Your Ultimate Directory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        .tool-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 20px -5px rgba(56, 189, 248, 0.2);
+        }
+        .category-header {
+            border-left: 4px solid #38bdf8;
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Hero Section -->
+    <header class="py-16 px-4 text-center bg-gradient-to-b from-blue-900/20 to-transparent">
+        <h1 class="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+            AI Tools Universe
+        </h1>
+        <p class="text-slate-400 max-w-2xl mx-auto mb-8">
+            A comprehensive, curated directory of the world's most powerful AI platforms, playgrounds, and research tools.
+        </p>
+        
+        <!-- Search Bar -->
+        <div class="max-w-xl mx-auto relative">
+            <input type="text" id="toolSearch" onkeyup="searchTools()" placeholder="Search tools (e.g. Gemini, Runway, Flux)..." 
+                class="w-full bg-slate-800/50 border border-slate-700 rounded-full py-4 px-12 focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-200">
+            <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-slate-500"></i>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 pb-24">
+        
+        <!-- Categories Container -->
+        <div id="directory">
+            
+            <!-- LLMs & Chatbots -->
+            <section class="mb-16">
+                <h2 class="category-header text-2xl font-bold mb-8 flex items-center gap-3">
+                    <i class="fa-solid fa-comments text-blue-400"></i> LLMs & Conversational AI
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="https://chat.openai.com" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full">Chatbot</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">ChatGPT</h3>
+                            <p class="text-slate-400 text-sm">OpenAI's flagship conversational model. Versatile for writing, coding, and problem-solving.</p>
+                        </div>
+                    </a>
+                    <a href="https://claude.ai" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full">Reasoning</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Claude</h3>
+                            <p class="text-slate-400 text-sm">Anthropic's model known for high-quality writing, coding, and reduced hallucination.</p>
+                        </div>
+                    </a>
+                    <a href="https://gemini.google.com" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full">Multimodal</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Google Gemini</h3>
+                            <p class="text-slate-400 text-sm">Google's most capable AI, integrated with Google Workspace and massive context windows.</p>
+                        </div>
+                    </a>
+                    <a href="https://grok.x.ai" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-gray-500/20 text-gray-400 px-3 py-1 rounded-full">Real-time</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Grok</h3>
+                            <p class="text-slate-400 text-sm">xAI's chatbot with real-time access to X (Twitter) data and a rebellious personality.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Research & Knowledge -->
+            <section class="mb-16">
+                <h2 class="category-header text-2xl font-bold mb-8 flex items-center gap-3">
+                    <i class="fa-solid fa-book-open text-emerald-400"></i> Research & Knowledge
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="https://notebooklm.google" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full">Note-taking</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">NotebookLM</h3>
+                            <p class="text-slate-400 text-sm">A research assistant that uses your own documents as sources to summarize and answer questions.</p>
+                        </div>
+                    </a>
+                    <a href="https://www.perplexity.ai" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full">Search</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Perplexity AI</h3>
+                            <p class="text-slate-400 text-sm">An AI-powered search engine that provides direct answers with citations from the web.</p>
+                        </div>
+                    </a>
+                    <a href="https://elicit.com" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-indigo-500/20 text-indigo-400 px-3 py-1 rounded-full">Academic</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Elicit</h3>
+                            <p class="text-slate-400 text-sm">AI research assistant for automating literature reviews and summarizing scientific papers.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Developer Tools & Playgrounds -->
+            <section class="mb-16">
+                <h2 class="category-header text-2xl font-bold mb-8 flex items-center gap-3">
+                    <i class="fa-solid fa-code text-pink-400"></i> Developer Platforms & Playgrounds
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="https://aistudio.google.com" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-pink-500/20 text-pink-400 px-3 py-1 rounded-full">API / Dev</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Google AI Studio</h3>
+                            <p class="text-slate-400 text-sm">Fast prototyping tool for Gemini API. Build, test, and tune prompts with long context support.</p>
+                        </div>
+                    </a>
+                    <a href="https://platform.openai.com/playground" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-slate-500/20 text-slate-400 px-3 py-1 rounded-full">Experiment</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">OpenAI Playground</h3>
+                            <p class="text-slate-400 text-sm">Advanced interface to test OpenAI's models like GPT-4o with system prompts and temperature control.</p>
+                        </div>
+                    </a>
+                    <a href="https://huggingface.co" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full">Open Source</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Hugging Face</h3>
+                            <p class="text-slate-400 text-sm">The "GitHub of AI" where thousands of open-source models and datasets are hosted.</p>
+                        </div>
+                    </a>
+                    <a href="https://cursor.com" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full">IDE</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Cursor</h3>
+                            <p class="text-slate-400 text-sm">An AI-first code editor built on VS Code, featuring deep model integration for coding.</p>
+                        </div>
+                    </a>
+                    <a href="https://replicate.com" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-red-500/20 text-red-400 px-3 py-1 rounded-full">Cloud Inference</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Replicate</h3>
+                            <p class="text-slate-400 text-sm">Run machine learning models in the cloud with a simple API, from image generation to audio.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Creative: Image & Video -->
+            <section class="mb-16">
+                <h2 class="category-header text-2xl font-bold mb-8 flex items-center gap-3">
+                    <i class="fa-solid fa-palette text-yellow-400"></i> Image & Video Generation
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="https://www.midjourney.com" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full">High Art</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Midjourney</h3>
+                            <p class="text-slate-400 text-sm">Leading AI image generator known for artistic quality, accessible via Discord or Web.</p>
+                        </div>
+                    </a>
+                    <a href="https://runwayml.com" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full">Video</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Runway Gen-3</h3>
+                            <p class="text-slate-400 text-sm">Professional text-to-video and image-to-video creative suite for filmmakers.</p>
+                        </div>
+                    </a>
+                    <a href="https://fal.ai" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-indigo-500/20 text-indigo-400 px-3 py-1 rounded-full">Fast Models</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Fal.ai</h3>
+                            <p class="text-slate-400 text-sm">Incredibly fast generative media platform, home to the latest Flux and SDXL models.</p>
+                        </div>
+                    </a>
+                    <a href="https://www.lumaal.com/dream-machine" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full">3D / Video</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Luma Dream Machine</h3>
+                            <p class="text-slate-400 text-sm">High-fidelity video generator from Luma AI, creating realistic 5-second clips.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+             <!-- Productivity & Others -->
+             <section class="mb-16">
+                <h2 class="category-header text-2xl font-bold mb-8 flex items-center gap-3">
+                    <i class="fa-solid fa-briefcase text-orange-400"></i> Productivity & Integration
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="https://notion.ai" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full">Workspace</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Notion AI</h3>
+                            <p class="text-slate-400 text-sm">AI integrated directly into your Notion workspace for writing, editing, and summarizing.</p>
+                        </div>
+                    </a>
+                    <a href="https://elevenlabs.io" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full">Voice</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">ElevenLabs</h3>
+                            <p class="text-slate-400 text-sm">The most advanced AI audio platform for life-like text-to-speech and voice cloning.</p>
+                        </div>
+                    </a>
+                    <a href="https://gamma.app" target="_blank" class="tool-card p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-semibold bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full">Decks</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Gamma</h3>
+                            <p class="text-slate-400 text-sm">Create beautiful presentations, documents, and webpages from a simple text prompt.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="py-12 border-t border-slate-800 text-center text-slate-500">
+        <p>&copy; 2024 AI Tools Universe. Built for the future.</p>
+    </footer>
+
+    <script>
+        function searchTools() {
+            const input = document.getElementById('toolSearch');
+            const filter = input.value.toLowerCase();
+            const cards = document.getElementsByClassName('tool-card');
+            const sections = document.querySelectorAll('section');
+
+            for (let i = 0; i < cards.length; i++) {
+                const title = cards[i].getElementsByTagName('h3')[0].innerText;
+                const desc = cards[i].getElementsByTagName('p')[0].innerText;
+                
+                if (title.toLowerCase().indexOf(filter) > -1 || desc.toLowerCase().indexOf(filter) > -1) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+
+            // Hide sections if no cards are visible
+            sections.forEach(section => {
+                const visibleCards = section.querySelectorAll('.tool-card[style=""]');
+                if (visibleCards.length === 0 && filter !== "") {
+                    section.style.display = "none";
+                } else {
+                    section.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
